@@ -9,7 +9,6 @@ const reducer = combineReducers({
     names: nameReducer
 });
 
-
 export const history = createBrowserHistory();
 
 const sagaMiddleware = createSagaMiddleware();
