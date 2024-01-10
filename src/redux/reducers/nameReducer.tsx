@@ -21,7 +21,6 @@ const initialState = {
 export const nameReducer = (state = initialState, action: any) => {
     const { names } = action;
     const {name} = action;
-    console.log(action);
 
     switch (action.type) {
         case SET_ALL_NAMES:
