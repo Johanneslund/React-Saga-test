@@ -11,19 +11,20 @@ import { GET_ALL_NAMES } from '../redux/reducers/nameReducer';
 
 
 function Footer() {
-    
+
     const dispatch = useDispatch();
 
     const [value, setValue] = useState();
     const [array, setArray] = useState<string[] | null>(null);
 
     const names = useSelector((state: any) => state.names.names);
+    const name = useSelector((state: any) => state.names.name);
 
     useEffect(() => {
         const foo = async () => {
-            dispatch({ type: GET_ALL_NAMES});
+            dispatch({ type: GET_ALL_NAMES });
         }
-       foo();
+        foo();
     }, []);
 
     useEffect(() => {
@@ -39,11 +40,14 @@ function Footer() {
                     setValue(newValue);
                 }}
             >
+                <Typography>
+                    {name !== "Johannes" && name}
+                </Typography>
                 <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
                 <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
                 <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
             </BottomNavigation>
-            {array && array.map((line : string, i) => <Typography key={line + {i}}> {line} </Typography>)}
+            {array && array.map((line: string, i) => <Typography key={line + { i }}> {line} </Typography>)}
         </Box>
     );
 }

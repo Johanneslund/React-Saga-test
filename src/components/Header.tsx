@@ -1,9 +1,11 @@
 import { AppBar, Box, Button, IconButton, Toolbar, Typography } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
+import { useSelector } from "react-redux";
 
 
 function Header() {
 
+    const name = useSelector((state: any) => state.names.name);
 
     return (
         <>
@@ -20,7 +22,7 @@ function Header() {
                             <MenuIcon />
                         </IconButton>
                         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                            Namn
+                            Namn : {name}
                         </Typography>
                         <Button color="inherit">Login</Button>
                     </Toolbar>
