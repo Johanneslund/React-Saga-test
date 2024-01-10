@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
 import Custombutton from "./Custombutton";
+import QR from "./QR";
 
 
 function Workspace() {
@@ -7,6 +8,7 @@ function Workspace() {
         <>
             <Box sx={{ minWidth: "100%", minHeight: "80vh" }}>
                 <Custombutton />
+                {/* <QR /> */}
             </Box>
         </>
     );
