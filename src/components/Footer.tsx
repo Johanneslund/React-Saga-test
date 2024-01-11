@@ -21,10 +21,14 @@ function Footer() {
     const name = useSelector((state: any) => state.names.name);
 
     useEffect(() => {
+
         const foo = async () => {
             dispatch({ type: GET_ALL_NAMES });
         }
         foo();
+        return () =>{
+
+        }
     }, []);
 
     useEffect(() => {
